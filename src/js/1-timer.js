@@ -6,7 +6,7 @@ import 'flatpickr/dist/flatpickr.min.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-import imageUrl from '../img/error.svg';
+import imageUrl from '../img/close.png';
 
 const startBtn = document.querySelector('[data-start]');
 const clockface = document.querySelector('.timer');
