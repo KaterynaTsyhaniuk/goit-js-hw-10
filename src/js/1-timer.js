@@ -46,6 +46,13 @@ startBtn.addEventListener('click', () => {
     iziToast.error({
       title: 'Error',
       message: 'Please select a date and time.',
+      titleColor: '#fff',
+      titleSize: '16px',
+      position: 'topRight',
+      backgroundColor: 'red',
+      messageColor: 'white',
+      iconUrl: imageUrl,
+      theme: 'dark',
     });
     return;
   }
@@ -65,6 +72,12 @@ startBtn.addEventListener('click', () => {
       iziToast.success({
         title: 'Completed',
         message: 'The countdown has finished!',
+        titleColor: '#fff',
+        titleSize: '16px',
+        position: 'topRight',
+        backgroundColor: 'green',
+        messageColor: 'white',
+        theme: 'dark',
       });
       return;
     }
