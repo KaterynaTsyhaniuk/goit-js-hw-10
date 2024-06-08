@@ -28,7 +28,7 @@ const options = {
         position: 'topRight',
         backgroundColor: 'red',
         messageColor: 'white',
-        iconUrl: '../img/error.svg',
+        iconUrl: imageUrl,
         theme: 'dark',
       });
       startBtn.disabled = true;
