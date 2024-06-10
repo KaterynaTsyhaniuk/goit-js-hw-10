@@ -9,8 +9,10 @@ import 'izitoast/dist/css/iziToast.min.css';
 import imageUrl from '../img/close.png';
 
 const startBtn = document.querySelector('[data-start]');
-const clockface = document.querySelector('.timer');
+const datePicker = document.querySelector('#datetime-picker');
 let userSelectedDate = null;
+
+startBtn.disabled = true;
 
 const options = {
   enableTime: true,
@@ -19,6 +21,7 @@ const options = {
   minuteIncrement: 1,
   onClose: function (selectedDates) {
     userSelectedDate = selectedDates[0];
+
     if (userSelectedDate <= new Date()) {
       iziToast.error({
         title: 'Error',
@@ -56,6 +59,8 @@ startBtn.addEventListener('click', () => {
     });
     return;
   }
+  startBtn.disabled = true;
+  datePicker.disabled = true;
 
   const timerFields = {
     days: document.querySelector('[data-days]'),
@@ -81,6 +86,7 @@ startBtn.addEventListener('click', () => {
       });
       return;
     }
+
     const time = convertMs(diff);
     updateClockface(timerFields, time);
   }, 1000);
@@ -105,9 +111,9 @@ function convertMs(ms) {
   return { days, hours, minutes, seconds };
 }
 
-console.log(convertMs(2000)); // {days: 0, hours: 0, minutes: 0, seconds: 2}
-console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
-console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
+// console.log(convertMs(2000)); // {days: 0, hours: 0, minutes: 0, seconds: 2}
+// console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
+// console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
 
 //////////////////////////////////////////////////////////////////////////////////////
 

@@ -52,8 +52,8 @@ form.addEventListener('submit', e => {
         theme: 'dark',
       });
     });
+
   setTimeout(() => {
-    delay.value = '';
-    state.value = 'fulfilled';
+    form.reset();
   }, 3000);
 });
